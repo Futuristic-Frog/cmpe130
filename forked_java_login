@@ -1,0 +1,75 @@
+function validateEmail(email) {
+  // Define the pattern to match the email address format.
+  var pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  // Match the pattern against the email address.
+  var match = pattern.test(email);
+  // Return true if the email address matches the pattern, else false.
+  return match;
+}
+
+function validatePassword(password) {
+  // Define the patterns to match the password format.
+  var upperPattern = /[A-Z]/;
+  var lowerPattern = /[a-z]/;
+  var digitPattern = /[0-9]/;
+  // Check if the password satisfies all the conditions.
+  if (password.length < 8) {
+    return false;
+  }
+  if (!upperPattern.test(password)) {
+    return false;
+  }
+  if (!lowerPattern.test(password)) {
+    return false;
+  }
+  if (!digitPattern.test(password)) {
+    return false;
+  }
+  // Return true if the password satisfies all the conditions, else false.
+  return true;
+}
+
+function validateID(id) {
+  var pattern = /^\d+$/;
+  // Check if the ID contains only digits.
+  return pattern.test(id);
+}
+
+function login() {
+  // Prompt the user for email and password and validate the input.
+  var email = prompt('Enter your email address: ');
+  var password = prompt('Enter your password: ');
+  var isAdmin = prompt('Are you an administrator? (y/n): ').toLowerCase() == 'y';
+  
+  // Validate the email address and password.
+  if (!validateEmail(email)) {
+    console.log('Invalid email address.');
+    return;
+  }
+  if (!validatePassword(password)) {
+    console.log('Invalid password.');
+    return;
+  }
+  if (isAdmin) {
+    var employeeID = prompt('Enter your employee ID: ');
+    if (!validateID(employeeID)) {
+      console.log('Invalid employee ID.');
+      return;
+    }
+    // Perform the administrator login.
+    console.log('Performing administrator login...');
+    // Do something with the email, password, and employee ID.
+    var data = `Email: ${email} | Password: ${password} | Employee ID: ${employeeID}\n`;
+    var fs = require('fs');
+    fs.appendFileSync('admin_logins.txt', data);
+  } else {
+    // Perform the normal login.
+    console.log('Performing normal login...');
+    // Do something with the email and password.
+    var data = `Email: ${email} | Password: ${password}\n`;
+    var fs = require('fs');
+    fs.appendFileSync('normal_logins.txt', data);
+  }
+}
+
+login();
