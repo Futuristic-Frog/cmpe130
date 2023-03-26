@@ -4,7 +4,7 @@ export default class navbar extends Component {
   render() {
     return (
         <>
-            <h1>Watsonville</h1>
+            <h1>Williamson</h1>
             <div>
                 <a href="www.google.com">Home</a>
                 <a href="www.google.com">Log In</a>
