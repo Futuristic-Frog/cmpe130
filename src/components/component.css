@@ -1,0 +1,10 @@
+div.navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    align-items: center;
+}
+
+div.navbar > h1 {
+    padding-right: 25%;
+}
