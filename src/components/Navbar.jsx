@@ -4,14 +4,14 @@ export default class navbar extends Component {
   render() {
     return (
         <>
-            <h1>Williamson</h1>
             <div>
-                <a href="www.google.com">Home</a>
-                <a href="www.google.com">Log In</a>
-                <a href="www.google.com">Community Showcase</a>
-                <a href="www.google.com">Events</a>
-                <a href="www.google.com">Bulletin Board</a>
-                <a href="www.google.com">FAQ</a>
+                <h1>Wiliamson</h1>
+                <a href="#home">Home</a>
+                <a href="#login">Log In</a>
+                <a href="#communityShowcase">Community Showcase</a>
+                <a href="#events">Events</a>
+                <a href="#bulletinBoard">Bulletin Board</a>
+                <a href="#faq">FAQ</a>
             </div>
         </>
     )
