@@ -1,10 +1,10 @@
 import './App.css';
-import Navbar from './components/Navbar';
+import Top from './components/Top';
 
 function App() {
   return (
     <div className="App">
-      <Navbar/>
+      <Top/>
       <h1>Welcome to Williamson</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
